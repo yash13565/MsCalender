@@ -9,7 +9,7 @@ import ProvideAppContext from './AppContext';
 import ErrorMessage from './ErrorMessage';
 import Welcome from './Welcome';
 import Calendar from './Calendar';
-// import NewEvent from './NewEvent';
+import NewEvent from './NewEvent';
 import 'bootstrap/dist/css/bootstrap.css';
 
 // <AppPropsSnippet>
@@ -29,10 +29,10 @@ const App = ({ pca }) => {
                 element={
                   <Calendar />
                 } />
-              {/* <Route path="/newevent"
+              <Route path="/newevent"
                 element={
                   <NewEvent />
-                } /> */}
+                } />
             </Routes>
           </Container>
         </Router>

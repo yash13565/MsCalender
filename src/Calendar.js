@@ -6,10 +6,10 @@ import { useAppContext } from './AppContext';
 import {data } from './CalenderData/Data';
 import { findIana } from 'windows-iana';
 import { getUserWeekCalendar } from './GraphService';
-
+import { NavLink as RouterNavLink } from 'react-router-dom';
+import { add, getDay, parseISO } from 'date-fns';
 const currentDate = new Date();
 const views = ['month'];
-
 function Calendar() {
   const app = useAppContext();
   const [events, setEvents] = useState([]);
@@ -32,14 +32,20 @@ function Calendar() {
   }, [app.user, app.authProvider, events.length]);
 
   return (
+    <>
+    <div className="mb-3">
+    <RouterNavLink to="/newevent" className="btn btn-dark btn-sm">New event</RouterNavLink>
+  </div>
     <Scheduler
         timeZone="Asia/Kolkata"
-        dataSource={data}
+        dataSource={events}
+        editing={false}
         views={views}
         defaultCurrentView="week"
         defaultCurrentDate={currentDate}
         height={600}
-        startDayHour={9} />
+        />
+        </>
   );
 }
 
