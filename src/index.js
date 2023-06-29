@@ -35,9 +35,9 @@ msalInstance.addEventCallback((event) => {
 });
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <App pca={msalInstance} />
-  </React.StrictMode>,
+  </>,
   document.getElementById('root')
 );
 

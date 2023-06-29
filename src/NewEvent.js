@@ -35,7 +35,7 @@ export default function NewEvent() {
         });
       }
     });
-
+    
     const newEvent = {
       subject: subject,
       attendees: attendeeArray.length > 0 ? attendeeArray : undefined,
@@ -56,6 +56,7 @@ export default function NewEvent() {
     try {
       await createEvent(app.authProvider, newEvent);
       setRedirect(true);
+      
     } catch (err) {
       app.displayError('Error creating event', JSON.stringify(err));
     }
