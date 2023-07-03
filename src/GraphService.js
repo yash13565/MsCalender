@@ -27,7 +27,11 @@ async function getUser(authProvider) {
 
   return user;
 }
-
+async function getAllCalendar(authProvider){
+  ensureClient(authProvider);
+  const getCal = await graphClient.api('/me/calendars').get()
+  return getCal;
+}
 async function getUserWeekCalendar(authProvider, timeZone) {
   ensureClient(authProvider);
 
@@ -85,5 +89,6 @@ async function createEvent(authProvider, newEvent) {
 module.exports = {
   getUser,
   getUserWeekCalendar,
-  createEvent
+  createEvent,
+  getAllCalendar
 };
