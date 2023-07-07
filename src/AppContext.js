@@ -21,7 +21,7 @@ function useProvideAppContext() {
   const msal = useMsal();
   const [user, setUser] = useState();
   const [error, setError] = useState();
-
+  console.log(user,'users')
   const displayError = (message, debug) => {
     setError({ message, debug });
   };
@@ -52,6 +52,7 @@ function useProvideAppContext() {
               email: user.mail || user.userPrincipalName || '',
               timeFormat: user.mailboxSettings?.timeFormat || 'h:mm a',
               timeZone: user.mailboxSettings?.timeZone || 'UTC',
+              id:user.id || '',
             });
           }
         } catch (err) {
@@ -86,8 +87,9 @@ function useProvideAppContext() {
       setUser({
         displayName: user.displayName || '',
         email: user.mail || user.userPrincipalName || '',
-        timeFormat: user.mailboxSettings?.timeFormat || '',
+        timeFormat: user.mailboxSettings?.timeFormat || 'h:mm a',
         timeZone: user.mailboxSettings?.timeZone || 'UTC',
+        id:user.id || '',
       });
     }
   };

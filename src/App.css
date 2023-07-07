@@ -19,3 +19,13 @@
   height: 30rem;
   width: 15rem;
 }
+.myinput{
+  background-color: rgb(184, 78, 51);
+  border: 2px solid;
+  line-height: 1.5rem;
+  color: white;
+}
+.navsection{
+  display: flex;
+  gap: 2rem;
+}

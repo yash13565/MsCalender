@@ -11,6 +11,7 @@ import Welcome from './Welcome';
 import Calendar from './Calendar';
 import NewEvent from './NewEvent';
 import 'bootstrap/dist/css/bootstrap.css';
+import AllCalenders from './AllCalenders';
 
 // <AppPropsSnippet>
 const App = ({ pca }) => {
@@ -32,6 +33,10 @@ const App = ({ pca }) => {
               <Route path="/newevent"
                 element={
                   <NewEvent />
+                } />
+              <Route path="/allcalendar"
+                element={
+                  <AllCalenders />
                 } />
             </Routes>
           </Container>
